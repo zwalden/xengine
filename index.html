@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!-- Mobile-friendly viewport -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Style sheet link -->
+    <link href="resources/css/styles.css" rel="stylesheet" media="all">
+</head>
+<body>
+
+<div id="wrapper">
+    <canvas id="viewport" style="position:absolute;top:0;left:0;z-index:2;"></canvas>
+</div>
+
+
+<!-- JS -->
+<script src="resources/js/xen.system.js"></script>
+<script src="resources/js/xen.registry.js"></script>
+<script src="resources/js/xen.blockFactory.js"></script>
+<script src="resources/js/xen.map.js"></script>
+<script src="resources/js/xen.iso.js"></script>
+<script src="resources/js/xen.render.js"></script>
+<!--<script src="resources/js/xen.core.js"></script>-->
+<!--<script src="resources/js/xen.system.js"></script>-->
+<script>
+
+    window.onload = function() {
+        xen.system.require(['render'], function(render) {
+            setTimeout(function(){
+              render();
+            },100); //sigh.. wait for resources, load them before we ever require anything from system
+        });
+    };
+</script>
+</body>
+</html>
